@@ -75,3 +75,8 @@ interface ReactionSchemaInterface {
   targetModel: "POST" | "COMMENT" | "REPLY";
   targetId: ObjectId;
 }
+
+interface RepostSchemaInterface {
+  user: ObjectId;
+  post: ObjectId;
+}
