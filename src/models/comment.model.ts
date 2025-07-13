@@ -79,6 +79,10 @@ const commentSchema: Schema<CommentSchemaInterface> = new mongoose.Schema(
       enum: ["PUBLISHED", "DRAFT", "DELETED"],
       default: "PUBLISHED",
     },
+    quoteId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Comment",
+    },
   },
   {
     timestamps: true,

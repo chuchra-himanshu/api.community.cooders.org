@@ -22,6 +22,7 @@ interface PostSchemaInterface {
   private: boolean;
   isEdited: boolean;
   status: "PUBLISHED" | "DRAFT" | "DELETED";
+  quoteId?: ObjectId;
 }
 
 interface CommentSchemaInterface {
@@ -45,6 +46,7 @@ interface CommentSchemaInterface {
   quoteEnabled: boolean;
   isEdited: boolean;
   status: "PUBLISHED" | "DRAFT" | "DELETED";
+  quoteId?: ObjectId;
 }
 
 interface ReplySchemaInterface {
@@ -68,6 +70,7 @@ interface ReplySchemaInterface {
   quoteEnabled: boolean;
   isEdited: boolean;
   status: "PUBLISHED" | "DRAFT" | "DELETED";
+  quoteId?: ObjectId;
 }
 
 interface ReactionSchemaInterface {

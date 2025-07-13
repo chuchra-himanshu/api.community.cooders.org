@@ -80,6 +80,10 @@ const replySchema: Schema<ReplySchemaInterface> = new mongoose.Schema(
       enum: ["PUBLISHED", "DRAFT", "DELETED"],
       default: "PUBLISHED",
     },
+    quoteId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Reply",
+    },
   },
   {
     timestamps: true,

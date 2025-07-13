@@ -90,6 +90,10 @@ const postSchema: Schema<PostSchemaInterface> = new mongoose.Schema(
       enum: ["PUBLISHED", "DRAFT", "DELETED"],
       default: "PUBLISHED",
     },
+    quoteId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Post",
+    },
   },
   {
     timestamps: true,
