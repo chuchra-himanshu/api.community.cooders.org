@@ -69,3 +69,9 @@ interface ReplySchemaInterface {
   isEdited: boolean;
   status: "PUBLISHED" | "DRAFT" | "DELETED";
 }
+
+interface ReactionSchemaInterface {
+  user: ObjectId;
+  targetModel: "POST" | "COMMENT" | "REPLY";
+  targetId: ObjectId;
+}
