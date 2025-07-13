@@ -46,3 +46,26 @@ interface CommentSchemaInterface {
   isEdited: boolean;
   status: "PUBLISHED" | "DRAFT" | "DELETED";
 }
+
+interface ReplySchemaInterface {
+  user: ObjectId;
+  post: ObjectId;
+  comment: ObjectId;
+  content: string;
+  snippets?: string[];
+  mentions?: ObjectId[];
+  attachments?: {
+    url: string;
+    id: string;
+    type: "IMAGE" | "VIDEO" | "FILE" | "AUDIO";
+  }[];
+  referenceLinks?: {
+    title: string;
+    url: string;
+  }[];
+  hidden: boolean;
+  pinned: boolean;
+  quoteEnabled: boolean;
+  isEdited: boolean;
+  status: "PUBLISHED" | "DRAFT" | "DELETED";
+}
