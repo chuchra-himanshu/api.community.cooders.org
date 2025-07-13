@@ -23,6 +23,7 @@ interface PostSchemaInterface {
   isEdited: boolean;
   status: "PUBLISHED" | "DRAFT" | "DELETED";
   quoteId?: ObjectId;
+  repostId?: ObjectId;
 }
 
 interface CommentSchemaInterface {
@@ -77,9 +78,4 @@ interface ReactionSchemaInterface {
   user: ObjectId;
   targetModel: "POST" | "COMMENT" | "REPLY";
   targetId: ObjectId;
-}
-
-interface RepostSchemaInterface {
-  user: ObjectId;
-  post: ObjectId;
 }
