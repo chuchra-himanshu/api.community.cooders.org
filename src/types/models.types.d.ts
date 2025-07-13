@@ -1,14 +1,14 @@
 interface PostSchemaInterface {
   user: ObjectId;
   description: string;
+  snippets?: string[];
+  tags?: string[];
+  mentions?: ObjectId[];
   attachments?: {
     url: string;
     id: string;
     type: "IMAGE" | "VIDEO" | "FILE" | "AUDIO";
   }[];
-  snippets?: string[];
-  tags?: string[];
-  mentions?: ObjectId[];
   referenceLinks?: {
     title: string;
     url: string;
@@ -20,6 +20,29 @@ interface PostSchemaInterface {
   repostEnabled: boolean;
   quoteEnabled: boolean;
   private: boolean;
+  isEdited: boolean;
+  status: "PUBLISHED" | "DRAFT" | "DELETED";
+}
+
+interface CommentSchemaInterface {
+  user: ObjectId;
+  post: ObjectId;
+  content: string;
+  snippets?: string[];
+  mentions?: ObjectId[];
+  attachments?: {
+    url: string;
+    id: string;
+    type: "IMAGE" | "VIDEO" | "FILE" | "AUDIO";
+  }[];
+  referenceLinks?: {
+    title: string;
+    url: string;
+  }[];
+  hidden: boolean;
+  pinned: boolean;
+  repliesEnabled: boolean;
+  quoteEnabled: boolean;
   isEdited: boolean;
   status: "PUBLISHED" | "DRAFT" | "DELETED";
 }
