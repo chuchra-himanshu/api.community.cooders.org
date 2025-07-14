@@ -79,3 +79,9 @@ interface ReactionSchemaInterface {
   targetModel: "POST" | "COMMENT" | "REPLY";
   targetId: ObjectId;
 }
+
+interface FollowSchemaInterface {
+  sender: ObjectId;
+  receiver: ObjectId;
+  status: "ACCEPTED" | "REJECTED" | "PENDING";
+}
