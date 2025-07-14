@@ -8,11 +8,9 @@ const createPost = asyncHandler(async (req: Request, res: Response) => {
   const { user_id } = req.params;
   const {
     description,
-    snippets,
     tags,
     mentions,
     attachments,
-    referenceLinks,
     repostId,
     quoteId,
     hidden,
@@ -28,11 +26,9 @@ const createPost = asyncHandler(async (req: Request, res: Response) => {
   const postPayload = {
     user: user_id,
     description,
-    snippets: snippets || [],
     tags: tags || [],
     mentions: mentions || [],
     attachments: attachments || [],
-    referenceLinks: referenceLinks || [],
     repostId: repostId || undefined,
     quoteId: quoteId || undefined,
     hidden: hidden ?? false,

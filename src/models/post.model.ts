@@ -15,14 +15,6 @@ const attachmentSchema = new mongoose.Schema(
   { _id: false }
 );
 
-const referenceLinkSchema = new mongoose.Schema(
-  {
-    title: { type: String, required: true },
-    url: { type: String, required: true },
-  },
-  { _id: false }
-);
-
 const postSchema: Schema<PostSchemaInterface> = new mongoose.Schema(
   {
     user: {
@@ -32,10 +24,6 @@ const postSchema: Schema<PostSchemaInterface> = new mongoose.Schema(
     description: {
       type: String,
       required: true,
-    },
-    snippets: {
-      type: [String],
-      default: [],
     },
     tags: {
       type: [String],
@@ -47,10 +35,6 @@ const postSchema: Schema<PostSchemaInterface> = new mongoose.Schema(
     },
     attachments: {
       type: [attachmentSchema],
-      default: [],
-    },
-    referenceLinks: {
-      type: [referenceLinkSchema],
       default: [],
     },
     hidden: {

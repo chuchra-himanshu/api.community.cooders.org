@@ -1,17 +1,12 @@
 interface PostSchemaInterface {
   user: ObjectId;
   description: string;
-  snippets?: string[];
   tags?: string[];
   mentions?: ObjectId[];
   attachments?: {
     url: string;
     id: string;
     type: "IMAGE" | "VIDEO" | "FILE";
-  }[];
-  referenceLinks?: {
-    title: string;
-    url: string;
   }[];
   hidden: boolean;
   pinned: boolean;
