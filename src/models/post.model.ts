@@ -8,7 +8,7 @@ const attachmentSchema = new mongoose.Schema(
     id: { type: String, required: true },
     type: {
       type: String,
-      enum: ["IMAGE", "VIDEO", "FILE", "AUDIO"],
+      enum: ["IMAGE", "VIDEO", "FILE"],
       required: true,
     },
   },
@@ -77,7 +77,7 @@ const postSchema: Schema<PostSchemaInterface> = new mongoose.Schema(
       type: Boolean,
       default: true,
     },
-    private: {
+    isPrivate: {
       type: Boolean,
       default: false,
     },

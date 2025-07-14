@@ -7,7 +7,7 @@ interface PostSchemaInterface {
   attachments?: {
     url: string;
     id: string;
-    type: "IMAGE" | "VIDEO" | "FILE" | "AUDIO";
+    type: "IMAGE" | "VIDEO" | "FILE";
   }[];
   referenceLinks?: {
     title: string;
@@ -19,7 +19,7 @@ interface PostSchemaInterface {
   repliesEnabled: boolean;
   repostEnabled: boolean;
   quoteEnabled: boolean;
-  private: boolean;
+  isPrivate: boolean;
   isEdited: boolean;
   status: "PUBLISHED" | "DRAFT" | "DELETED";
   quoteId?: ObjectId;
